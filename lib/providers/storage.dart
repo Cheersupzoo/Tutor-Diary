@@ -18,7 +18,7 @@ class FileStorage {
 
   Future<File> _getExternalFile() async {
     final dir = await getDirectoryGolbal();
-    //print(dir.path);
+    print(dir.path);
     final filePath = p.join(dir.path, 'simple_tutor.json');
     return File(filePath);
   }
@@ -148,7 +148,6 @@ class FileStorage {
 
   Future<File> backupCourses(List<CourseModel> courses) async {
     final file = await _getExternalFile();
-    //print(file.toString());
     CourseList temp = CourseList(courses);
     return file.writeAsString(jsonEncode(temp));
   }

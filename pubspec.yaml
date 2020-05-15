@@ -23,6 +23,7 @@ dependencies:
       url: https://github.com/derohimat/flutter_datetime_picker.git
   flutter_slidable: "^0.5.3"
   #simple_permissions: ^0.1.9
+  permission_handler: ^5.0.0+hotfix.6
   path: ^1.6.2
   #share: 0.6.3+5
     #git:
@@ -30,12 +31,13 @@ dependencies:
     #  path: packages/share
     #  ref: feature/shareFile
   flutter_share_file: 1.1.4+1
+  #update share
+  wc_flutter_share: ^0.2.1
   dots_indicator: ^1.0.0
   # image_gallery_saver: ^1.1.0
   image_gallery_saver: 1.2.2
    # path: ./image_gallery_saver-1.1.0
-  simple_permissions: 
-    path:  ./simple_permissions-0.1.9
+  
   
   
 

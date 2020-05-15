@@ -13,7 +13,9 @@ import 'package:tutor_helper/providers/providers.dart';
 //bloc not need
 import 'package:tutor_helper/blocs/blocs.dart';
 
-import 'package:simple_permissions/simple_permissions.dart';
+// change permission handler
+//import 'package:simple_permissions/simple_permissions.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class HomeFAB extends StatefulWidget {
   _HomeFAB createState() => _HomeFAB();
@@ -118,16 +120,14 @@ class _HomeFAB extends State<HomeFAB> {
   }
 
   void _backup() async {
-    PermissionStatus permissionResult =
-        await SimplePermissions.requestPermission(
-            Permission.WriteExternalStorage);
-    if (permissionResult == PermissionStatus.authorized) {
+    
+    if (await Permission.storage.request().isGranted) {
       try {
         List<CourseModel> json = await FileStorage().loadCourses();
         //print(json);
         final save = await FileStorage().backupCourses(json);
-        //print('2');
-        //print(save);
+        print('2');
+        print(save);
       } catch (e) {
         print(e);
         print('not init yet');
